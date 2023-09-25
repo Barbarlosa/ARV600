@@ -25,11 +25,11 @@ public class BasicMoveandRotateViewPoint : MonoBehaviour
     {
         if (keyboard.wKey.isPressed)
         {
-            transform.Translate(moveFront);
+            transform.Translate(new Vector3(moveFront.x,Terrain.activeTerrain.SampleHeight(transform.position) - gameObject.transform.position.y,moveFront.z));
         }
         if (keyboard.sKey.isPressed)
         {
-            transform.Translate(moveBack);
+            transform.Translate(new Vector3(moveBack.x, moveBack.y, moveBack.z));
         }
         if (keyboard.dKey.isPressed)
         {
