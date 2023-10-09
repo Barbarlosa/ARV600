@@ -29,7 +29,7 @@ public class BasicMoveandRotateViewPoint : MonoBehaviour
         }
         if (keyboard.sKey.isPressed)
         {
-            transform.Translate(new Vector3(moveBack.x, moveBack.y, moveBack.z));
+            transform.Translate(new Vector3(moveBack.x, Terrain.activeTerrain.SampleHeight(transform.position) - gameObject.transform.position.y, moveBack.z));
         }
         if (keyboard.dKey.isPressed)
         {
